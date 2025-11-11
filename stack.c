@@ -1,3 +1,6 @@
+Aim:To implement a program that performs basic stack operations such as push, pop and peek
+demonstrating the use of the stack data structure using an array 
+
 #include<stdio.h>
 
 int TOP = -1, MAX;
