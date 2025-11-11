@@ -1,3 +1,6 @@
+Aim:To write a program for an element in a sorted array using linear search technique
+
+
 #include <stdio.h>
 
 int main()
