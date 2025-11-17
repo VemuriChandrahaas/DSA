@@ -63,5 +63,4 @@ Enter the string to reverse: hello
 Reversed string: olleh
 
 result:
-The program successfully reverses a given string using the stack 
-data structure, following the Last-In-First-Out (LIFO) rule.
+The program successfullY demonstrates string reversal using POP & PUSH.
