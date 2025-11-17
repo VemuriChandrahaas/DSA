@@ -1,3 +1,15 @@
+aim:To implement all operations of a doubly linked list including:
+Insertion at beginning
+Insertion at a specific position
+Insertion at end
+Deletion at beginning
+Deletion by value
+Deletion at a specific position
+Deletion from end
+searching for a value
+Forward and backward display
+
+
 #include <stdio.h>
 #define MAX_SIZE 5
 
@@ -99,3 +111,33 @@ int main()
         }
     }
 }
+
+output:
+--- Doubly Linked List Menu ---
+1. Add at Beginning
+2. Add at Position
+3. Add at End
+4. Delete from Beginning
+5. Delete by Value
+6. Delete from Position
+7. Delete from End
+8. Search
+9. Display
+10. Exit
+
+Enter value: 10
+10 has been added at the beginning.
+
+Enter value: 20
+20 has been added at the end.
+
+Enter value: 15, Position: 2
+15 inserted at position 2.
+
+Display:
+Forward: 10 15 20
+Backward: 20 15 10
+
+result:
+The program successfully performs all operations on a doubly 
+linked list, including insertion, deletion, search, forward and backward traversal.
