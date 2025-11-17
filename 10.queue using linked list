@@ -1,0 +1,90 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node *next;
+};
+
+struct Node *FRONT = NULL, *REAR = NULL;
+
+struct Node* CreateNode(int x) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    if(newNode != NULL) {
+        newNode->data = x;
+        newNode->next = NULL;
+    }
+    return newNode;
+}
+
+void enqueue(int x) {
+    struct Node* NewNode = CreateNode(x);
+    if(NewNode == NULL) {
+        printf("Queue Overflow\n");
+        return;
+    }
+    if(FRONT == NULL) {
+        FRONT = NewNode;
+        REAR = NewNode;
+    } else {
+        REAR->next = NewNode;
+        REAR = NewNode;
+    }
+    printf("Element inserted\n");
+}
+
+int dequeue() {
+    if(FRONT == NULL) {
+        printf("Queue Underflow\n");
+        return -1;
+    }
+    struct Node* temp = FRONT;
+    int value = temp->data;
+    FRONT = FRONT->next;
+    free(temp);
+    if(FRONT == NULL)
+        REAR = NULL;
+    return value;
+}
+
+void display() {
+    if(FRONT == NULL) {
+        printf("Queue is Empty\n");
+        return;
+    }
+    struct Node* t = FRONT;
+    printf("Queue elements:\n");
+    while(t != NULL) {
+        printf("%d\n", t->data);
+        t = t->next;
+    }
+}
+
+int main() {
+    int ch, val;
+    while(1) {
+        printf("\n1 Enqueue\n2 Dequeue\n3 Display\n4 Exit\n");
+        scanf("%d", &ch);
+
+        if(ch == 1) {
+            printf("Enter value: ");
+            scanf("%d", &val);
+            enqueue(val);
+        }
+        else if(ch == 2) {
+            int v = dequeue();
+            if(v != -1)
+                printf("Dequeued: %d\n", v);
+        }
+        else if(ch == 3) {
+            display();
+        }
+        else if(ch == 4) {
+            break;
+        }
+        else {
+            printf("Invalid choice\n");
+        }
+    }
+    return 0;
+}
