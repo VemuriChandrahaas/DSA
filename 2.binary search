@@ -44,3 +44,25 @@ int main()
         printf("not found");
     }
 }
+
+output:
+enter the number of elements n:
+5
+enter the elements:
+2
+4
+6
+8
+10
+enter the key
+8
+
+mid-2, Key-8
+mid-3, Key-8
+found at position 4
+
+result:
+The program successfully implements the Binary Search technique
+to locate a key element in a sorted array and displays whether the element is present or not.
+
+
