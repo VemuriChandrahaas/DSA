@@ -62,3 +62,15 @@ int main() {
     infixtopostfix(infix);
     return 0;
 }
+
+output:
+Input:
+Enter infix expression: A+B*C
+
+Output:
+Postfix expression: ABC*+
+
+result:
+The program successfully converts a given infix expression into its equivalent 
+postfix expression using stack operations and precedence rules.
+
