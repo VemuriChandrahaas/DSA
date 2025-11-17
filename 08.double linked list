@@ -237,6 +237,42 @@ int main() {
     }
 }
 
+output:
+Enter your choice: 1
+Enter value to insert: 10
+10 enqueued
+
+Enter your choice: 1
+Enter value to insert: 20
+20 enqueued
+
+Enter your choice: 1
+Enter value to insert: 30
+30 enqueued
+
+Enter your choice: 3
+Queue elements: 10 20 30
+
+Enter your choice: 2
+Dequeued: 10
+
+Enter your choice: 3
+Queue elements: 20 30
+
+Enter your choice: 2
+Dequeued: 20
+
+Enter your choice: 2
+Dequeued: 30
+
+Enter your choice: 2
+Queue Underflow
+
+Enter your choice: 3
+Queue is empty
+
+
+
 result:
 The program successfully implements all doubly linked list operations including insertion, deletion, search, and 
 bidirectional traversal using a single unified program exactly as per the given PPT algorithms.
