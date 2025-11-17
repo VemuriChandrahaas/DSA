@@ -1,3 +1,7 @@
+AIM:
+To implement queue operations using linked list, including enqueue, dequeue, and display, by dynamically creating nodes and maintaining the FRONT and REAR pointers.
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -88,3 +92,101 @@ int main() {
     }
     return 0;
 }
+
+OUTPUT:
+1 Enqueue
+2 Dequeue
+3 Display
+4 Exit
+1
+Enter value: 10
+Element inserted
+
+1 Enqueue
+2 Dequeue
+3 Display
+4 Exit
+1
+Enter value: 20
+Element inserted
+
+1 Enqueue
+2 Dequeue
+3 Display
+4 Exit
+1
+Enter value: 30
+Element inserted
+
+1 Enqueue
+2 Dequeue
+3 Display
+4 Exit
+3
+Queue elements:
+10
+20
+30
+
+1 Enqueue
+2 Dequeue
+3 Display
+4 Exit
+2
+Dequeued: 10
+
+1 Enqueue
+2 Dequeue
+3 Display
+4 Exit
+3
+Queue elements:
+20
+30
+
+1 Enqueue
+2 Dequeue
+3 Display
+4 Exit
+2
+Dequeued: 20
+
+1 Enqueue
+2 Dequeue
+3 Display
+4 Exit
+2
+Dequeued: 30
+
+1 Enqueue
+2 Dequeue
+3 Display
+4 Exit
+2
+Queue Underflow
+
+1 Enqueue
+2 Dequeue
+3 Display
+4 Exit
+4
+
+
+
+RESULT:Program sucessfully demonstrates queue using linked list.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+oytp
