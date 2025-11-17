@@ -1,4 +1,5 @@
-aim:To implement all operations of a doubly linked list including:
+aim:
+To implement all operations of a doubly linked list including:
 Insertion at beginning
 Insertion at a specific position
 Insertion at end
