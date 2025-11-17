@@ -56,3 +56,12 @@ char pop()
             stringreversal();
             return 0;
         }
+
+output:
+Enter the size of char stack: 20
+Enter the string to reverse: hello
+Reversed string: olleh
+
+result:
+The program successfully reverses a given string using the stack 
+data structure, following the Last-In-First-Out (LIFO) rule.
