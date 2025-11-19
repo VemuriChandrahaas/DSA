@@ -1,7 +1,10 @@
 AIM:
-To implement queue operations using linked list, including enqueue, dequeue, and display, by dynamically creating nodes and maintaining the FRONT and REAR pointers.
+To implement a Circular Queue using Linked List in C with the operations:
+Enqueue (Insert)
+dequeue (Delete)
+Display
 
-
+program:
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -94,86 +97,68 @@ int main() {
 }
 
 OUTPUT:
-1 Enqueue
-2 Dequeue
-3 Display
-4 Exit
-1
-Enter value: 10
-Element inserted
+--- Queue Using Linked List Menu ---
+1. Enqueue
+2. Dequeue
+3. Display
+4. Exit
+Enter your choice: 1
+Enter data to insert: 10
+10 inserted into circular queue.
 
-1 Enqueue
-2 Dequeue
-3 Display
-4 Exit
-1
-Enter value: 20
-Element inserted
+--- Queue Using Linked List Menu ---
+1. Enqueue
+2. Dequeue
+3. Display
+4. Exit
+Enter your choice: 1
+Enter data to insert: 20
+20 inserted into circular queue.
 
-1 Enqueue
-2 Dequeue
-3 Display
-4 Exit
-1
-Enter value: 30
-Element inserted
+--- Queue Using Linked List Menu ---
+1. Enqueue
+2. Dequeue
+3. Display
+4. Exit
+Enter your choice: 1
+Enter data to insert: 30
+30 inserted into circular queue.
 
-1 Enqueue
-2 Dequeue
-3 Display
-4 Exit
-3
-Queue elements:
-10
-20
-30
+--- Queue Using Linked List Menu ---
+1. Enqueue
+2. Dequeue
+3. Display
+4. Exit
+Enter your choice: 3
+Circular Queue elements: 10 20 30
 
-1 Enqueue
-2 Dequeue
-3 Display
-4 Exit
-2
-Dequeued: 10
+--- Queue Using Linked List Menu ---
+1. Enqueue
+2. Dequeue
+3. Display
+4. Exit
+Enter your choice: 2
+Deleted element: 10
 
-1 Enqueue
-2 Dequeue
-3 Display
-4 Exit
-3
-Queue elements:
-20
-30
+--- Queue Using Linked List Menu ---
+1. Enqueue
+2. Dequeue
+3. Display
+4. Exit
+Enter your choice: 3
+Circular Queue elements: 20 30
 
-1 Enqueue
-2 Dequeue
-3 Display
-4 Exit
-2
-Dequeued: 20
-
-1 Enqueue
-2 Dequeue
-3 Display
-4 Exit
-2
-Dequeued: 30
-
-1 Enqueue
-2 Dequeue
-3 Display
-4 Exit
-2
-Queue Underflow
-
-1 Enqueue
-2 Dequeue
-3 Display
-4 Exit
-4
+--- Queue Using Linked List Menu ---
+1. Enqueue
+2. Dequeue
+3. Display
+4. Exit
+Enter your choice: 4
+Exiting...
 
 
 
-RESULT:Program sucessfully demonstrates queue using linked list.
+RESULT:Program sucessfully demonstrates Circular queue using linked list.
 
 
 
