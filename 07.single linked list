@@ -4,84 +4,111 @@ Insertion at beginning
 Insertion at end
 Insertion at specific position
 Displaying the linked list
-
 #include <stdio.h>
 #include <stdlib.h>
 
+// Node structure: each node stores data + pointer to next node
 struct Node {
     int data;
     struct Node* next;
- 
+};  // <-- required semicolon
+
+// Insert a new node at the beginning of the list
 void insertAtBeginning(struct Node** head, int value) {
+    // Create new node
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = value;
+
+    // New node points to current head
     newNode->next = *head;
+
+    // Head is updated to new node
     *head = newNode;
 }
- 
+
+// Insert a new node at the end of the list
 void insertAtEnd(struct Node** head, int value) {
+    // Create new node
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = value;
-    newNode->next = NULL;
- 
+    newNode->next = NULL;  // last node always points to NULL
+
+    // If list is empty, new node becomes head
     if (*head == NULL) {
         *head = newNode;
         return;
     }
- 
+
+    // Otherwise, traverse to last node
     struct Node* temp = *head;
     while (temp->next != NULL) {
         temp = temp->next;
     }
+
+    // Insert new node at the end
     temp->next = newNode;
 }
- 
+
+// Insert at a specific position in the list
 void insertAtPosition(struct Node** head, int value, int pos) {
+    // Create new node
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = value;
     newNode->next = NULL;
- 
+
+    // Case 1: Insert at position 1 (beginning)
     if (pos == 1) {
         newNode->next = *head;
         *head = newNode;
         return;
     }
- 
+
     struct Node* temp = *head;
     int k = 1;
+
+    // Move temp to (pos-1)th node
     while (temp != NULL && k < pos - 1) {
         temp = temp->next;
         k++;
     }
- 
+
+    // If position is out of range
     if (temp == NULL) {
         printf("Position out of range\n");
         free(newNode);
         return;
     }
- 
+
+    // Insert node at the correct position
     newNode->next = temp->next;
     temp->next = newNode;
 }
- 
+
+// Print all elements of the linked list
 void printList(struct Node* head) {
     printf("List: ");
+
+    // If list is empty
     if (head == NULL) {
         printf("Empty\n");
         return;
     }
+
+    // Traverse and print nodes until NULL
     while (head != NULL) {
         printf("%d -> ", head->data);
         head = head->next;
     }
+
     printf("NULL\n");
 }
- 
+
 int main() {
-    struct Node* head = NULL;
+    struct Node* head = NULL; // initially list is empty
     int choice, value, position;
- 
+
     while (1) {
+        // Menu options
         printf("\n--- Linked List Menu ---\n");
         printf("1. Insert at Beginning\n");
         printf("2. Insert at End\n");
@@ -90,20 +117,21 @@ int main() {
         printf("5. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
- 
+
         switch (choice) {
+
             case 1:
                 printf("Enter value to insert at beginning: ");
                 scanf("%d", &value);
                 insertAtBeginning(&head, value);
                 break;
- 
+
             case 2:
                 printf("Enter value to insert at end: ");
                 scanf("%d", &value);
                 insertAtEnd(&head, value);
                 break;
- 
+
             case 3:
                 printf("Enter value: ");
                 scanf("%d", &value);
@@ -111,22 +139,23 @@ int main() {
                 scanf("%d", &position);
                 insertAtPosition(&head, value, position);
                 break;
- 
+
             case 4:
                 printList(head);
                 break;
- 
+
             case 5:
                 printf("Exiting...\n");
                 exit(0);
- 
+
             default:
                 printf("Invalid choice. Try again.\n");
         }
     }
- 
+
     return 0;
 }
+
 output:
 --- Linked List Menu ---
 1. Insert at Beginning
