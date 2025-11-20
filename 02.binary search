@@ -2,48 +2,69 @@ Aim:To write a program for an element in a sorted array using binary search tech
 
 
 #include<stdio.h>
+
 int main()
 {
-    int i,n,key;
+    int i, n, key;
+
+    // Ask user for number of elements
     printf("enter the number of elements n: \n");
     scanf("%d", &n);
     
+    // Create an array of size n
     int array[n];
+
+    // Take input for array elements
+    // NOTE: For binary search, the array must be sorted
     printf("enter the elements: \n");
     for(i = 0; i < n; i++)
     {
         scanf("%d", &array[i]);
     }
 
-    
+    // Ask for the key element to search
     printf("enter the key \n");
     scanf("%d",&key);
-    int mid,start=0,end=n-1;
+
+    // Declare variables for binary search
+    int mid, start = 0, end = n - 1;
     
-    while(start<=end)
+    // Binary search loop
+    while(start <= end)
     {
+        // Find the middle index
+        mid = (start + end) / 2;
 
+        // Print current mid and key value for understanding
+        printf("\nmid = %d, key = %d", mid, key);
 
-        mid = (start+end)/2;
-        printf("\nmid-%d, Key-%d", mid, key);
-        if(array[mid]==key)
+        // If middle element matches the key → element found
+        if(array[mid] == key)
         {
-            printf("found at position %d", mid+1);
+            printf("\nfound at position %d", mid + 1);   // Position = index + 1
             break;
         }
-    if(array[mid]<key)
-    {
-        start = mid + 1;
+
+        // If key is greater → search right half
+        if(array[mid] < key)
+        {
+            start = mid + 1;
+        }
+        // If key is smaller → search left half
+        else
+        {
+            end = mid - 1;
+        }
     }
-    else
-    {
-        end = mid - 1;
+
+    // If start goes beyond end → key not present
+    if(start > end){
+        printf("\nnot found");
     }
-    }
-    if(start>end){
-        printf("not found");
-    }
+
+    return 0;
 }
+
 
 output:
 enter the number of elements n:
