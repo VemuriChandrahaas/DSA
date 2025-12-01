@@ -7,38 +7,37 @@ int main()
 {
     int n, key, i;
 
-    // Ask the user how many elements they want in the array
+    // Asking user how many elements the array should hold
     printf("Enter the number of elements required: ");
     scanf("%d", &n);
 
-    // Create an array of size n
+    // Declaring an array of size 'n'
     int array[n];
 
-    // Take input for each element of the array
+    // Getting the array elements from the user
     printf("Enter the elements:\n");
     for(i = 0; i < n; i++)
     {
         scanf("%d", &array[i]);
     }
 
-    // Ask the user for the key element to search
+    // Reading the element to search
     printf("Enter the key to search for: ");
     scanf("%d", &key);
 
-    // Linear search: go through each element
+    // Linear search through the array
     for(i = 0; i < n; i++)
     {
-        // NOTE: The program checks (key + 1), not key directly
-        // This means if key = 5, it searches for 6 in the array
+        // NOTE: We are checking array element with (key + 1)
+        // This means: if key = 5, we search for 6 in the array
         if(array[i] == key + 1)
         {
-            // Print the position where the element is found
             printf("Element found at position %d\n", i);
             break;
         }
     }
 
-    // If loop completed without break → element not found
+    // If the loop completes without finding a match
     if(i == n)
     {
         printf("Element not found\n");
