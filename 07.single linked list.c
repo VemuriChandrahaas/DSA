@@ -10,40 +10,50 @@ Displaying the linked list
 #include <stdio.h>
 #include <stdlib.h>
 
+// Creating a node structure
 struct node {
     int data;
     struct node *next;
 };
 
-struct node *head = NULL;
+struct node *head = NULL;   // starting point of list
 
-void insertBegin(int value) {
-    struct node *newNode = (struct node*)malloc(sizeof(struct node));
-    newNode->data = value;
-    newNode->next = head;
-    head = newNode;
+// Insert a new node at the beginning
+void insertAtBeginning(int value) {
+    struct node *newnode = (struct node*)malloc(sizeof(struct node));
+
+    // storing data in new node
+    newnode->data = value;
+    newnode->next = head;   // link old head to new node
+    head = newnode;         // move head to new node
+
     printf("Inserted %d at beginning\n", value);
 }
 
-void insertEnd(int value) {
-    struct node *newNode = (struct node*)malloc(sizeof(struct node));
-    newNode->data = value;
-    newNode->next = NULL;
+// Insert a new node at the end
+void insertAtEnd(int value) {
+    struct node *newnode = (struct node*)malloc(sizeof(struct node));
+    newnode->data = value;
+    newnode->next = NULL;
 
+    // if list is empty
     if(head == NULL) {
-        head = newNode;
+        head = newnode;
         printf("Inserted %d at end\n", value);
         return;
     }
 
+    // go to last node
     struct node *temp = head;
-    while(temp->next != NULL)
+    while(temp->next != NULL) {
         temp = temp->next;
+    }
 
-    temp->next = newNode;
+    temp->next = newnode;
     printf("Inserted %d at end\n", value);
 }
 
+// display list from head to end
 void display() {
     if(head == NULL) {
         printf("List is empty\n");
@@ -52,13 +62,16 @@ void display() {
 
     struct node *temp = head;
     printf("Linked List: ");
+
     while(temp != NULL) {
         printf("%d -> ", temp->data);
         temp = temp->next;
     }
+
     printf("NULL\n");
 }
 
+// main menu function
 int main() {
     int choice, value;
 
@@ -67,20 +80,20 @@ int main() {
         printf("2. Insert at End\n");
         printf("3. Display\n");
         printf("4. Exit\n");
-        printf("Enter choice: ");
+        printf("Choose any: ");
         scanf("%d", &choice);
 
         switch(choice) {
             case 1:
                 printf("Enter value: ");
                 scanf("%d", &value);
-                insertBegin(value);
+                insertAtBeginning(value);
                 break;
 
             case 2:
                 printf("Enter value: ");
                 scanf("%d", &value);
-                insertEnd(value);
+                insertAtEnd(value);
                 break;
 
             case 3:
@@ -97,6 +110,7 @@ int main() {
 
     return 0;
 }
+
 
 output:
 --- Linked List Menu ---
